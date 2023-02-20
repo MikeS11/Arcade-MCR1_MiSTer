@@ -489,7 +489,10 @@ wire [3:0] r,g,b;
 
 wire no_rotate = status[2] | direct_video;
 wire rotate_ccw = 0;
-//screen_rotate screen_rotate (.*);
+
+wire flip;
+wire video_rotated;
+screen_rotate screen_rotate (.*);
 
 wire hires = status[13] && !status[5:3];
 
