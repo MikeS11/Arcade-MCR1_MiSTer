@@ -263,6 +263,7 @@ hps_io #(.CONF_STR(CONF_STR)) hps_io
 	.status_menumask({|status[5:3],mod_kick,direct_video}),
 	.forced_scandoubler(forced_scandoubler),
 	.gamma_bus(gamma_bus),
+	.video_rotated(video_rotated),
 	.direct_video(direct_video),
 
 	.ioctl_download(ioctl_download),
@@ -490,7 +491,7 @@ wire [3:0] r,g,b;
 wire no_rotate = status[2] | direct_video;
 wire rotate_ccw = 0;
 
-wire flip;
+wire flip = 0;
 wire video_rotated;
 screen_rotate screen_rotate (.*);
 
